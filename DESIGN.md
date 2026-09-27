@@ -10,8 +10,8 @@ colors:
   paper: "#EEF0E6"
   paper-deep: "#E3E7D9"
   rule: "#9DB5A0"
-  grid-minor: "rgba(122, 156, 124, 0.16)"
-  grid-major: "rgba(122, 156, 124, 0.32)"
+  grid-minor: "rgba(140, 118, 88, 0.055)"
+  grid-major: "rgba(140, 118, 88, 0.14)"
   open-signal: "#3F7A4A"
 typography:
   display:
@@ -133,7 +133,7 @@ A cool, papery green-grey field with graphite ink and a single roasted-bean terr
 - **Graph Paper** (paper): the page ground.
 - **Deep Paper** (paper-deep): footer band and the map's loading ground; the one tonal step below the sheet.
 - **Rule Green** (rule): 1px row dividers, dashed and dotted leaders, section top rules, the resting underline of text links.
-- **Grid Green, minor/major** (grid-minor, grid-major): the translucent 8px and 40px graph lines painted on the body background. Nothing else uses them.
+- **Grid Pencil, minor/major** (grid-minor, grid-major): the faint warm 8px and 40px graph lines painted on the body background; they should read as paper texture, not a pattern. Hairline (0.5px) on 2x screens and softer still under 720px (0.035 / 0.1 alpha). Nothing else uses them.
 
 ### Tertiary
 - **Open Signal Green** (open-signal): only the 8px dot beside the live "open now" status. It is a state signal, not a brand colour.

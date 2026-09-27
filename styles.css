@@ -3,8 +3,10 @@
 :root {
   --paper: #EEF0E6;
   --paper-deep: #E3E7D9;
-  --grid-minor: rgba(122, 156, 124, 0.16);
-  --grid-major: rgba(122, 156, 124, 0.32);
+  /* Сетка — фактура бумаги: тёплый карандаш, мелкая почти не видна */
+  --grid-minor: rgba(140, 118, 88, 0.055);
+  --grid-major: rgba(140, 118, 88, 0.14);
+  --grid-w: 1px;
   --rule: #9DB5A0;
   --ink: #22262B;
   --pencil: #555E5B;
@@ -35,15 +37,20 @@ body {
   color: var(--ink);
   background-color: var(--paper);
   background-image:
-    linear-gradient(var(--grid-major) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid-major) 1px, transparent 1px),
-    linear-gradient(var(--grid-minor) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid-minor) 1px, transparent 1px);
+    linear-gradient(var(--grid-major) var(--grid-w), transparent var(--grid-w)),
+    linear-gradient(90deg, var(--grid-major) var(--grid-w), transparent var(--grid-w)),
+    linear-gradient(var(--grid-minor) var(--grid-w), transparent var(--grid-w)),
+    linear-gradient(90deg, var(--grid-minor) var(--grid-w), transparent var(--grid-w));
   background-size: 40px 40px, 40px 40px, 8px 8px, 8px 8px;
   font-family: var(--f-text);
   font-size: 1.0625rem;
   line-height: 1.55;
   caret-color: var(--roast);
+}
+
+/* На плотных экранах — линия в один физический пиксель */
+@media (min-resolution: 2dppx) {
+  :root { --grid-w: 0.5px; }
 }
 
 ::selection { background: var(--roast); color: var(--on-roast); }
@@ -645,6 +652,10 @@ p { margin: 0; }
 }
 
 @media (max-width: 720px) {
+  :root {
+    --grid-minor: rgba(140, 118, 88, 0.035);
+    --grid-major: rgba(140, 118, 88, 0.1);
+  }
   body { font-size: 1rem; }
   .nav { display: none; }
   .top__row { min-height: 64px; justify-content: space-between; }
